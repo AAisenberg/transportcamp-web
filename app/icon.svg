@@ -5,9 +5,9 @@
     y="22"
     text-anchor="middle"
     font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
-    font-size="15"
+    font-size="17"
     font-weight="700"
-    letter-spacing="-0.6"
+    letter-spacing="-0.65"
   >
     <tspan fill="#E34F26">T</tspan><tspan fill="#1E6EB4">C</tspan>
   </text>
