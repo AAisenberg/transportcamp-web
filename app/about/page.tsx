@@ -58,7 +58,7 @@ export default function AboutPage() {
               {steps.map((step, index) => (
                 <FadeIn key={step.title} delay={index * 0.06}>
                   <li className="flex gap-5">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-sm bg-tc-dark font-sans text-sm font-semibold text-white">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-tc-dark font-sans text-sm font-semibold text-white">
                       {index + 1}
                     </span>
                     <div>

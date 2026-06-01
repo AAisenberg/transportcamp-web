@@ -38,9 +38,9 @@ export function Pillars() {
     <div className="flex flex-col gap-4">
       {pillars.map((pillar, index) => (
         <FadeIn key={pillar.title} delay={index * 0.08}>
-          <article className="rounded-sm border border-black/5 bg-white p-5 md:p-6">
+          <article className="rounded-md border border-black/5 bg-white p-5 md:p-6">
             <div
-              className={`mb-4 flex h-10 w-10 items-center justify-center rounded-sm font-sans text-sm font-semibold ${accentMap[pillar.accent]}`}
+              className={`mb-4 flex h-10 w-10 items-center justify-center rounded-md font-sans text-sm font-semibold ${accentMap[pillar.accent]}`}
               aria-hidden
             >
               {index + 1}

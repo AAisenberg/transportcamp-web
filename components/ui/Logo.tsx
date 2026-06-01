@@ -11,8 +11,8 @@ export function Logo({ variant = 'colour', className = '' }: LogoProps) {
 
   return (
     <svg
-      viewBox="0 0 236 40"
-      width="236"
+      viewBox="0 0 200 40"
+      width="200"
       height="40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -27,19 +27,10 @@ export function Logo({ variant = 'colour', className = '' }: LogoProps) {
         fontFamily="var(--font-brand)"
         fontSize="28"
         fontWeight="700"
-        fill={transportFill}
+        letterSpacing="-0.5"
       >
-        Transport
-      </text>
-      <text
-        x="132"
-        y="30"
-        fontFamily="var(--font-brand)"
-        fontSize="28"
-        fontWeight="700"
-        fill={campFill}
-      >
-        Camp
+        <tspan fill={transportFill}>Transport</tspan>
+        <tspan fill={campFill}>Camp</tspan>
       </text>
     </svg>
   )

@@ -28,8 +28,8 @@ export function NewsletterSignup({
     ? 'font-sans text-sm text-tc-muted leading-relaxed'
     : 'font-sans text-sm text-white/50'
   const inputClass = isLight
-    ? 'min-w-0 flex-1 rounded-sm border border-black/15 bg-white px-4 py-3 font-sans text-sm text-tc-text placeholder:text-tc-muted/60 focus:border-tc-orange focus:outline-none focus:ring-1 focus:ring-tc-orange'
-    : 'min-w-0 flex-1 rounded-sm border border-white/20 bg-white/10 px-4 py-3 font-sans text-sm text-white placeholder:text-white/40 focus:border-tc-orange focus:outline-none focus:ring-1 focus:ring-tc-orange'
+    ? 'min-w-0 flex-1 rounded-md border border-black/15 bg-white px-4 py-3 font-sans text-sm text-tc-text placeholder:text-tc-muted/60 focus:border-tc-orange focus:outline-none focus:ring-1 focus:ring-tc-orange'
+    : 'min-w-0 flex-1 rounded-md border border-white/20 bg-white/10 px-4 py-3 font-sans text-sm text-white placeholder:text-white/40 focus:border-tc-orange focus:outline-none focus:ring-1 focus:ring-tc-orange'
 
   if (!newsletterEnabled) {
     return (
@@ -85,7 +85,7 @@ export function NewsletterSignup({
         />
         <button
           type="submit"
-          className="shrink-0 rounded-sm bg-tc-orange px-5 py-3 font-sans text-sm font-medium text-white transition-colours hover:bg-[#c9451f]"
+          className="shrink-0 rounded-md bg-tc-orange px-5 py-3 font-sans text-sm font-medium text-white transition-colours hover:bg-[#c9451f]"
         >
           Subscribe
         </button>

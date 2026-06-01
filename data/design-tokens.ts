@@ -38,6 +38,57 @@ export const typeScale = [
   { name: 'Label', className: 'text-xs font-semibold uppercase tracking-widest', sample: 'Sponsorship' },
 ] as const
 
+/** Production radius tokens — preview on /design-system/ before rolling out site-wide */
+export const borderRadii = [
+  {
+    token: 'sharp',
+    px: 0,
+    className: 'rounded-none',
+    tailwind: 'rounded-none',
+    usage: 'Square corners — not used on the live site today',
+  },
+  {
+    token: 'sm',
+    px: 2,
+    className: 'rounded-sm',
+    tailwind: 'rounded-sm',
+    usage: 'Current live site default (2px) — easy to miss on small UI',
+  },
+  {
+    token: 'md',
+    px: 6,
+    className: 'rounded-md',
+    tailwind: 'rounded-md',
+    usage: 'Recommended for buttons, cards, and inputs',
+  },
+  {
+    token: 'lg',
+    px: 12,
+    className: 'rounded-xl',
+    tailwind: 'rounded-xl (12px)',
+    usage: 'Softer alternate if md still feels too sharp',
+  },
+] as const
+
+/** Enlarged swatches on the design-system page — same px values, bigger shapes */
+export const radiusComparisonSamples = borderRadii.map((r) => ({
+  px: r.px,
+  label: `${r.px}px`,
+  sublabel: r.token === 'md' ? `${r.token} · recommended` : r.token,
+  recommended: r.token === 'md',
+  tailwind: r.tailwind,
+}))
+
+export const radiusGuidance = {
+  recommended: 'md' as const,
+  recommendedPx: 6,
+  liveSitePx: 6,
+  liveSiteClass: 'rounded-md',
+  keepFullRadius: 'Chips and pills stay rounded-full',
+  summary:
+    'The live site uses 6px corners (rounded-md) on buttons, cards, and inputs. Comparison below shows how that differs from sharper options.',
+} as const
+
 export const brandLanguage = {
   productName: 'TransportCamp',
   rule: 'Always one word in brand copy — never "Transport Camp".',

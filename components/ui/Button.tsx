@@ -35,7 +35,7 @@ export function Button({
   className = '',
   type = 'button',
 }: ButtonProps) {
-  const classes = `inline-flex items-center justify-center font-sans font-medium rounded-sm transition-colours ${variantClasses[variant]} ${sizeClasses[size]} ${className}`
+  const classes = `inline-flex items-center justify-center font-sans font-medium rounded-md transition-colours ${variantClasses[variant]} ${sizeClasses[size]} ${className}`
 
   if (href) {
     const isExternal = href.startsWith('http')

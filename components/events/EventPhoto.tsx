@@ -13,7 +13,7 @@ export function EventPhoto({ event }: EventPhotoProps) {
     <section className="-mt-2 bg-tc-off-white pb-0 pt-0">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <FadeIn>
-          <figure className="overflow-hidden rounded-sm border border-black/8 bg-white">
+          <figure className="overflow-hidden rounded-md border border-black/8 bg-white">
             <Image
               src={event.photo}
               alt={event.photoCaption ?? `TransportCamp ${event.city} ${event.year}`}

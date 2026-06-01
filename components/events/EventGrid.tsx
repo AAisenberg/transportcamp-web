@@ -29,7 +29,7 @@ export function EventGrid({ events, showUpcoming = false }: EventGridProps) {
         return (
           <article
             key={event.slug}
-            className={`group rounded-sm border p-6 transition-colours ${
+            className={`group rounded-md border p-6 transition-colours ${
               isUpcoming && accent === 'blue'
                 ? 'border-tc-blue/30 border-l-4 border-l-tc-blue bg-white'
                 : isUpcoming

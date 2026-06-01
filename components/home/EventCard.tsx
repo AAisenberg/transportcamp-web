@@ -20,7 +20,7 @@ export function EventCard({
 
   return (
     <aside
-      className={`rounded-sm border border-white/10 border-l-4 bg-black/40 backdrop-blur-sm ${borderAccent} ${
+      className={`rounded-md border border-white/10 border-l-4 bg-black/40 backdrop-blur-sm ${borderAccent} ${
         compact ? 'p-5' : 'p-6'
       }`}
     >

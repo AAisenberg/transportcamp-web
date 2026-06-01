@@ -1,4 +1,5 @@
-<svg viewBox="0 0 236 40" width="236" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="TransportCamp" overflow="visible">
-  <text x="0" y="30" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#E34F26">Transport</text>
-  <text x="132" y="30" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#1E6EB4">Camp</text>
+<svg viewBox="0 0 200 40" width="200" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="TransportCamp" overflow="visible">
+  <text x="0" y="30" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="-0.5">
+    <tspan fill="#E34F26">Transport</tspan><tspan fill="#1E6EB4">Camp</tspan>
+  </text>
 </svg>

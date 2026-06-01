@@ -24,7 +24,7 @@ export function HistorySection() {
           </FadeIn>
 
           <FadeIn delay={0.08}>
-            <figure className="overflow-hidden rounded-sm border border-black/8 lg:sticky lg:top-28">
+            <figure className="overflow-hidden rounded-md border border-black/8 lg:sticky lg:top-28">
               <Image
                 src="/images/events/melbourne-2025.png"
                 alt="TransportCamp Melbourne 2025 group photo"

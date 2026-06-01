@@ -67,7 +67,7 @@ export default function ContactPage() {
               </FadeIn>
 
               <FadeIn delay={0.06}>
-                <div className="rounded-sm border border-black/8 bg-tc-off-white p-6 md:p-8">
+                <div className="rounded-md border border-black/8 bg-tc-off-white p-6 md:p-8">
                   <NewsletterSignup variant="light" />
                 </div>
               </FadeIn>

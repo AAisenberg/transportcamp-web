@@ -72,7 +72,7 @@ export default function EventPage({ params }: EventPageProps) {
 
                 <FadeIn>
                   <aside
-                    className={`rounded-sm border border-black/8 border-l-4 bg-tc-off-white p-6 ${borderAccent}`}
+                    className={`rounded-md border border-black/8 border-l-4 bg-tc-off-white p-6 ${borderAccent}`}
                   >
                     <h2 className="font-sans text-xs font-semibold uppercase tracking-widest text-tc-muted">
                       Details
