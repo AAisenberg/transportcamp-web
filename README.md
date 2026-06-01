@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TransportCamp Web
 
-## Getting Started
+Static marketing site for [TransportCamp](https://transportcamp.city) — Next.js 14 App Router with static export for Vercel.
 
-First, run the development server:
+## Stack
+
+- Next.js 14 (App Router, `output: 'export'`)
+- TypeScript (strict)
+- Tailwind CSS
+- Framer Motion (subtle entrance animations)
+- DM Serif Display + DM Sans via `next/font/google`
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+Static output is written to `out/` — deploy that directory to Vercel (or any static host).
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy to Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Import this repo as a new Vercel project (separate from CrowdLab).
+2. Framework preset: Next.js (build command `npm run build`, output directory `out` for static export).
+3. Point `transportcamp.city` DNS to the new project.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Content
 
-## Deploy on Vercel
+All events live in `data/events.ts`. Update dates, venues and ticket URLs there — never in components.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Newsletter (Mailchimp)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. In Mailchimp, open your TransportCamp audience → **Signup forms** → **Embedded forms**.
+2. Copy the form `action` URL from the generated HTML.
+3. Add to `.env.local`:
+
+```bash
+NEXT_PUBLIC_MAILCHIMP_FORM_ACTION=https://YOUR_DC.list-manage.com/subscribe/post?u=...&id=...
+```
+
+4. Rebuild (`npm run build`) — static export bakes in `NEXT_PUBLIC_*` at build time.
+
+The hero shows a placeholder message until this variable is set.
+
+## Social links
+
+Add to `.env.local` (icons show in footer and `/contact/` when set):
+
+```bash
+NEXT_PUBLIC_X_URL=https://x.com/your-handle
+NEXT_PUBLIC_LINKEDIN_URL=https://www.linkedin.com/...
+# Optional — omit until you have an Instagram account
+NEXT_PUBLIC_INSTAGRAM_URL=
+```
+
+Instagram is optional and stays hidden until set. X is the main social channel for now.
+
+## Open items
+
+- Replace Humanitix ticket URL in `melbourne-2026` when live
+- Add real sponsor logos to `SponsorsStrip` and `public/sponsors/`
+- Replace `public/og-image.png` with a designed 1200×630 asset

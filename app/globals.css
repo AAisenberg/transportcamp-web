@@ -3,25 +3,49 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --tc-orange: #e34f26;
+  --tc-blue: #1e6eb4;
+  --tc-dark: #0c0c0c;
+  --tc-off-white: #f7f7f7;
+  --tc-white: #ffffff;
+  --tc-text: #1a1a1a;
+  --tc-muted: #6b7280;
+  --font-brand: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-tc-text antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-sans font-semibold tracking-tight;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .dot-grid {
+    background-color: var(--tc-dark);
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 0
+    );
+    background-size: 24px 24px;
+  }
+
+  .stripe-accent {
+    background: linear-gradient(
+      180deg,
+      var(--tc-orange) 0%,
+      var(--tc-blue) 100%
+    );
   }
 }
