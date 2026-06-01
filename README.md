@@ -30,8 +30,10 @@ Static output is written to `out/` — deploy that directory to Vercel (or any s
 ## Deploy to Vercel
 
 1. Import this repo as a new Vercel project (separate from CrowdLab).
-2. Framework preset: Next.js (build command `npm run build`, output directory `out` for static export).
-3. Point `transportcamp.city` DNS to the new project.
+2. Framework preset: **Next.js**. Build command: `npm run build` (default).
+3. **Leave Output Directory empty** (do not set `out`). With `output: 'export'` in `next.config.mjs`, Vercel runs the Next.js build and serves the static export automatically. Setting Output Directory to `out` causes a `routes-manifest.json` error because that folder is plain HTML, not a `.next` server build.
+4. Add `NEXT_PUBLIC_*` env vars in the Vercel project, then redeploy.
+5. Point `transportcamp.city` DNS to the new project.
 
 ## Content
 
