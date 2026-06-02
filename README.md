@@ -42,16 +42,16 @@ All events live in `data/events.ts`. Update dates, venues and ticket URLs there 
 ## Newsletter (Mailchimp)
 
 1. In Mailchimp, open your TransportCamp audience → **Signup forms** → **Embedded forms**.
-2. Copy the form `action` URL from the generated HTML.
-3. Add to `.env.local`:
+2. Copy the form `action` URL from the generated HTML (`https://…/subscribe/post?u=…&id=…`). Use `&` not `&amp;`.
+3. Add to `.env.local` and **Vercel → Environment Variables** (Production):
 
 ```bash
 NEXT_PUBLIC_MAILCHIMP_FORM_ACTION=https://YOUR_DC.list-manage.com/subscribe/post?u=...&id=...
 ```
 
-4. Rebuild (`npm run build`) — static export bakes in `NEXT_PUBLIC_*` at build time.
+4. Redeploy — static export bakes in `NEXT_PUBLIC_*` at build time.
 
-The hero shows a placeholder message until this variable is set.
+Signup uses Mailchimp’s JSONP API and only shows success after Mailchimp responds. If double opt-in is enabled in Mailchimp, subscribers must click the confirmation email (check spam). In Mailchimp: **Audience → Settings → Audience name and defaults → Form settings**.
 
 ## Social links
 
