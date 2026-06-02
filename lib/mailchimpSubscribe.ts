@@ -1,6 +1,8 @@
 import {
   getMailchimpBotFieldName,
   mailchimpFormAction,
+  mailchimpTags,
+  newsletterSuccessMessage,
 } from '@/data/newsletter'
 
 export interface MailchimpSubscribeResult {
@@ -73,6 +75,7 @@ export function subscribeToMailchimp(email: string): Promise<MailchimpSubscribeR
   params.set('EMAIL', email.trim())
   if (botField) params.set(botField, '')
   if (fId) params.set('f_id', fId)
+  if (mailchimpTags) params.set('tags', mailchimpTags)
 
   return new Promise((resolve) => {
     const callbackName = `mailchimp_${Date.now()}_${Math.random().toString(36).slice(2)}`
@@ -97,9 +100,7 @@ export function subscribeToMailchimp(email: string): Promise<MailchimpSubscribeR
       if (data.result === 'success') {
         finish({
           ok: true,
-          message:
-            data.msg ||
-            'Thanks — check your inbox to confirm your subscription.',
+          message: newsletterSuccessMessage,
         })
       } else {
         finish({

@@ -1,7 +1,7 @@
 'use client'
 
 import { useId, useState } from 'react'
-import { newsletterEnabled } from '@/data/newsletter'
+import { newsletterEnabled, newsletterSuccessMessage } from '@/data/newsletter'
 import { subscribeToMailchimp } from '@/lib/mailchimpSubscribe'
 
 export interface NewsletterSignupProps {
@@ -44,16 +44,8 @@ export function NewsletterSignup({
   if (status === 'success') {
     return (
       <div className={className}>
-        <p
-          className={`font-sans text-sm font-semibold leading-relaxed ${
-            isLight ? 'text-tc-orange' : 'text-tc-orange'
-          }`}
-        >
-          {message}
-        </p>
-        <p className={`mt-3 font-sans text-xs leading-relaxed ${descClass}`}>
-          If nothing arrives in a few minutes, check spam or promotions. You can
-          also try a different email address.
+        <p className="font-sans text-sm font-semibold leading-relaxed text-tc-orange">
+          {newsletterSuccessMessage}
         </p>
       </div>
     )
@@ -74,7 +66,6 @@ export function NewsletterSignup({
 
     if (result.ok) {
       setStatus('success')
-      setMessage(result.message)
     } else {
       setStatus('error')
       setMessage(result.message)
