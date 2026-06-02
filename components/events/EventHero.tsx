@@ -32,15 +32,17 @@ export function EventHero({ event }: EventHeroProps) {
       />
 
       <div className="relative mx-auto max-w-6xl px-5 md:px-8">
-        <Link
-          href="/events/"
-          className="font-sans text-sm text-white/50 transition-colours hover:text-white"
-        >
-          ← All events
-        </Link>
+        <div className="flex flex-col items-start gap-4">
+          <Link
+            href="/events/"
+            className="font-sans text-sm text-white/50 transition-colours hover:text-white"
+          >
+            ← All events
+          </Link>
+          <Chip className="!border-white/20 !text-white/80">{statusLabel}</Chip>
+        </div>
 
-        <Chip className="mt-6 !border-white/20 !text-white/80">{statusLabel}</Chip>
-        <h1 className="mt-6 font-sans text-4xl font-semibold tracking-tight text-white md:text-5xl lg:text-6xl">
+        <h1 className="mt-8 font-sans text-4xl font-semibold tracking-tight text-white md:text-5xl lg:text-6xl">
           TransportCamp {event.city} {event.year}
         </h1>
         <p className="mt-4 font-sans text-xl text-white/80">{event.date}</p>
