@@ -13,14 +13,12 @@ export function EventCard({
   accent = 'orange',
   compact = false,
 }: EventCardProps) {
-  const borderAccent =
-    accent === 'blue' ? 'border-l-tc-blue' : 'border-l-tc-orange'
   const labelAccent = accent === 'blue' ? 'text-tc-blue' : 'text-tc-orange'
   const ticketCta = getTicketCta(event)
 
   return (
     <aside
-      className={`rounded-md border border-white/10 border-l-4 bg-black/40 backdrop-blur-sm ${borderAccent} ${
+      className={`rounded-md border border-white/10 bg-black/40 backdrop-blur-sm ${
         compact ? 'p-5' : 'p-6'
       }`}
     >

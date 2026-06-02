@@ -5,10 +5,12 @@ import { Button } from '@/components/ui/Button'
 import { Chip } from '@/components/ui/Chip'
 import { Logo } from '@/components/ui/Logo'
 import { SectionHeader } from '@/components/ui/SectionHeader'
+import { HeroEventCardVariants } from '@/components/design-system/HeroEventCardVariants'
 import {
   borderRadii,
   brandLanguage,
   colours,
+  heroEventCardVariants,
   radiusComparisonSamples,
   radiusGuidance,
   typeScale,
@@ -19,6 +21,7 @@ const designSystemSections = [
   { id: 'logo', label: 'Logo' },
   { id: 'colours', label: 'Colours' },
   { id: 'border-radius', label: 'Border radius' },
+  { id: 'hero-event-cards', label: 'Hero event cards' },
   { id: 'typography', label: 'Typography' },
   { id: 'components', label: 'Components' },
   { id: 'principles', label: 'Principles' },
@@ -298,6 +301,37 @@ export default function DesignSystemPage() {
           </div>
         </section>
 
+        {/* Hero event card accents */}
+        <section
+          id="hero-event-cards"
+          className="scroll-mt-28 border-t border-black/5 py-16 md:py-20"
+        >
+          <div className="mx-auto max-w-6xl px-5 md:px-8">
+            <p className="font-sans text-xs font-semibold uppercase tracking-widest text-tc-orange">
+              Live · B minimal
+            </p>
+            <h2 className="mt-2 font-sans text-2xl font-semibold tracking-tight text-tc-text md:text-3xl">
+              Hero event cards
+            </h2>
+            <p className="mt-4 max-w-2xl font-sans text-base text-tc-muted leading-relaxed">
+              The live site uses <strong className="font-semibold text-tc-text">B — Minimal</strong>
+              : uniform card border with city colour on the label and links only. Archive below
+              for reference.
+            </p>
+
+            <HeroEventCardVariants />
+
+            <ul className="mt-10 space-y-2 font-sans text-sm text-tc-muted">
+              {heroEventCardVariants.map((v) => (
+                <li key={v.id}>
+                  <strong className="text-tc-text">{v.letter} — {v.name}:</strong>{' '}
+                  {v.description}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
         {/* Typography */}
         <section id="typography" className="scroll-mt-28 py-16 md:py-20">
           <div className="mx-auto max-w-6xl px-5 md:px-8">
@@ -426,7 +460,7 @@ export default function DesignSystemPage() {
             <ul className="mt-6 list-disc space-y-3 pl-5 font-sans text-tc-muted leading-relaxed">
               <li>Sans-serif Helvetica throughout — no decorative serif on live pages unless deliberately added later.</li>
               <li>Generous whitespace, editorial hierarchy via size and weight — not heavy shadows or gradient heroes.</li>
-              <li>Orange and blue echo the logo; use city accent (orange for Sydney, blue for Melbourne) on 2026 event cards.</li>
+              <li>Orange and blue echo the logo; Sydney/Melbourne accents on labels and links — not left-border stripes on cards.</li>
               <li>Subtle Framer Motion entrances only (fade + slight translateY).</li>
               <li>All event copy and dates live in <code className="text-xs bg-tc-off-white px-1 rounded">data/events.ts</code>.</li>
               <li>{brandLanguage.rule}</li>

@@ -26,22 +26,33 @@ export function EventGrid({ events, showUpcoming = false }: EventGridProps) {
         const ticketCta = getTicketCta(event)
         const hoverTitle = titleHoverClass(isUpcoming, accent)
 
+        const titleClass = isUpcoming
+          ? accent === 'blue'
+            ? 'text-tc-blue group-hover:text-tc-blue/80'
+            : 'text-tc-orange group-hover:text-[#c9451f]'
+          : `text-tc-text ${hoverTitle}`
+
         return (
           <article
             key={event.slug}
-            className={`group rounded-md border p-6 transition-colours ${
-              isUpcoming && accent === 'blue'
-                ? 'border-tc-blue/30 border-l-4 border-l-tc-blue bg-white'
-                : isUpcoming
-                  ? 'border-tc-orange/30 border-l-4 border-l-tc-orange bg-white'
-                  : 'border-black/8 bg-white hover:border-tc-blue/30'
-            }`}
+            className="group rounded-md border border-black/8 bg-white p-6 transition-colours hover:border-tc-blue/30"
           >
             <Link href={`/events/${event.slug}/`} className="block">
+              {isUpcoming && (
+                <p
+                  className={`font-sans text-xs font-semibold uppercase tracking-widest ${
+                    accent === 'blue' ? 'text-tc-blue' : 'text-tc-orange'
+                  }`}
+                >
+                  {event.city} {event.year}
+                </p>
+              )}
               <h3
-                className={`font-sans text-2xl font-semibold text-tc-text transition-colours ${hoverTitle}`}
+                className={`font-sans text-2xl font-semibold transition-colours ${
+                  isUpcoming ? `mt-1 ${titleClass}` : titleClass
+                }`}
               >
-                {event.city} {event.year}
+                {isUpcoming ? event.date : `${event.city} ${event.year}`}
               </h3>
               <p className="mt-2 font-sans text-sm text-tc-muted">{event.date}</p>
               <p

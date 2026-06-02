@@ -8,7 +8,6 @@ import { Navbar } from '@/components/layout/Navbar'
 import { Button } from '@/components/ui/Button'
 import { FadeIn } from '@/components/ui/FadeIn'
 import { events } from '@/data/events'
-import { eventAccentColour } from '@/lib/brand'
 import { getEventBySlug } from '@/lib/events'
 import { isVenuePending } from '@/lib/formatVenue'
 import { getTicketCta } from '@/lib/tickets'
@@ -41,9 +40,6 @@ export default function EventPage({ params }: EventPageProps) {
   const event = getEventBySlug(params.slug)
   if (!event) notFound()
 
-  const accent = eventAccentColour(event.slug)
-  const borderAccent =
-    accent === 'blue' ? 'border-l-tc-blue' : 'border-l-tc-orange'
   const ticketCta = getTicketCta(event)
 
   return (
@@ -71,9 +67,7 @@ export default function EventPage({ params }: EventPageProps) {
                 </div>
 
                 <FadeIn>
-                  <aside
-                    className={`rounded-md border border-black/8 border-l-4 bg-tc-off-white p-6 ${borderAccent}`}
-                  >
+                  <aside className="rounded-md border border-black/8 bg-tc-off-white p-6">
                     <h2 className="font-sans text-xs font-semibold uppercase tracking-widest text-tc-muted">
                       Details
                     </h2>

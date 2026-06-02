@@ -38,7 +38,7 @@ export const typeScale = [
   { name: 'Label', className: 'text-xs font-semibold uppercase tracking-widest', sample: 'Sponsorship' },
 ] as const
 
-/** Production radius tokens — preview on /design-system/ before rolling out site-wide */
+/** Production radius tokens */
 export const borderRadii = [
   {
     token: 'sharp',
@@ -52,14 +52,14 @@ export const borderRadii = [
     px: 2,
     className: 'rounded-sm',
     tailwind: 'rounded-sm',
-    usage: 'Current live site default (2px) — easy to miss on small UI',
+    usage: 'Previous default (2px)',
   },
   {
     token: 'md',
     px: 6,
     className: 'rounded-md',
     tailwind: 'rounded-md',
-    usage: 'Recommended for buttons, cards, and inputs',
+    usage: 'Live site — buttons, cards, and inputs',
   },
   {
     token: 'lg',
@@ -70,11 +70,10 @@ export const borderRadii = [
   },
 ] as const
 
-/** Enlarged swatches on the design-system page — same px values, bigger shapes */
 export const radiusComparisonSamples = borderRadii.map((r) => ({
   px: r.px,
   label: `${r.px}px`,
-  sublabel: r.token === 'md' ? `${r.token} · recommended` : r.token,
+  sublabel: r.token === 'md' ? `${r.token} · live site` : r.token,
   recommended: r.token === 'md',
   tailwind: r.tailwind,
 }))
@@ -88,6 +87,44 @@ export const radiusGuidance = {
   summary:
     'The live site uses 6px corners (rounded-md) on buttons, cards, and inputs. Comparison below shows how that differs from sharper options.',
 } as const
+
+/** Homepage hero event card accent options — preview on /design-system/#hero-event-cards */
+export const heroEventCardVariants = [
+  {
+    id: 'current',
+    letter: 'A',
+    name: 'Left accent',
+    description:
+      'Thick left border in city colour. Fast to scan; common in Tailwind-heavy and AI-generated layouts.',
+    pick: false,
+  },
+  {
+    id: 'minimal',
+    letter: 'B',
+    name: 'Minimal (live)',
+    description:
+      'Uniform card border only — city label, date, and link carry orange or blue. More editorial, less “dashboard”.',
+    pick: true,
+  },
+  {
+    id: 'top-bar',
+    letter: 'C',
+    name: 'Top accent',
+    description:
+      'Thin full-width bar at the top of the card. Still codes Sydney/Melbourne without the side stripe.',
+    pick: false,
+  },
+  {
+    id: 'tinted-border',
+    letter: 'D',
+    name: 'Tinted border',
+    description:
+      'Whole card outline in a soft orange or blue tint. Softer than a left bar, clearer than minimal.',
+    pick: false,
+  },
+] as const
+
+export type HeroEventCardVariantId = (typeof heroEventCardVariants)[number]['id']
 
 export const brandLanguage = {
   productName: 'TransportCamp',
