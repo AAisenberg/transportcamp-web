@@ -39,7 +39,7 @@ export const events: Event[] = [
     slug: 'melbourne-2026',
     city: 'Melbourne',
     year: 2026,
-    date: 'Thursday 9 October 2026',
+    date: 'Friday 9 October 2026',
     dateISO: '2026-10-09',
     venue: 'Monash University, 750 Collins Street, Docklands',
     status: 'upcoming',

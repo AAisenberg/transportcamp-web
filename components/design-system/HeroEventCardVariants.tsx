@@ -26,7 +26,7 @@ const previewEvents: PreviewEvent[] = [
   {
     city: 'Melbourne',
     year: 2026,
-    date: 'Thursday 9 October 2026',
+    date: 'Friday 9 October 2026',
     venue: 'Monash University, 750 Collins Street, Docklands',
     ticketNote: 'Tickets on sale soon',
     accent: 'blue',
