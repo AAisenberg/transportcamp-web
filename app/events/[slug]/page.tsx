@@ -2,7 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { EventHero } from '@/components/events/EventHero'
+import { EventMap } from '@/components/events/EventMap'
 import { EventPhoto } from '@/components/events/EventPhoto'
+import { EventVenueHost } from '@/components/events/EventVenueHost'
 import { Footer } from '@/components/layout/Footer'
 import { Navbar } from '@/components/layout/Navbar'
 import { Button } from '@/components/ui/Button'
@@ -64,6 +66,10 @@ export default function EventPage({ params }: EventPageProps) {
                       </p>
                     </FadeIn>
                   )}
+                  {event.venueHost && (
+                    <EventVenueHost venueHost={event.venueHost} />
+                  )}
+                  <EventMap event={event} />
                 </div>
 
                 <FadeIn>
@@ -88,6 +94,22 @@ export default function EventPage({ params }: EventPageProps) {
                           {event.venue}
                         </dd>
                       </div>
+                      {event.registrationOpens && (
+                        <div>
+                          <dt className="text-tc-muted">Registration opens</dt>
+                          <dd className="mt-1 font-medium text-tc-text">
+                            {event.registrationOpens}
+                          </dd>
+                        </div>
+                      )}
+                      {event.eventStart && (
+                        <div>
+                          <dt className="text-tc-muted">Event starts</dt>
+                          <dd className="mt-1 font-medium text-tc-text">
+                            {event.eventStart}
+                          </dd>
+                        </div>
+                      )}
                       {event.capacity && (
                         <div>
                           <dt className="text-tc-muted">Capacity</dt>
@@ -114,7 +136,9 @@ export default function EventPage({ params }: EventPageProps) {
 
                     {ticketCta && !ticketCta.onSale && (
                       <p className="mt-3 font-sans text-xs text-tc-muted leading-relaxed">
-                        Venue and ticket links will be added when announced.
+                        {isVenuePending(event)
+                          ? 'Venue and ticket links will be added when announced.'
+                          : 'Ticket link will be added when sales open.'}
                       </p>
                     )}
 

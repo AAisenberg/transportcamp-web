@@ -70,7 +70,9 @@ export function EventHero({ event }: EventHeroProps) {
 
         {event.status === 'upcoming' && !ticketCta?.onSale && (
           <p className="mt-3 max-w-xl font-sans text-sm text-white/50 leading-relaxed">
-            Subscribe on the homepage for venue and registration updates.
+            {venuePending
+              ? 'Subscribe on the homepage for venue and registration updates.'
+              : 'Subscribe on the homepage for ticket announcements.'}
           </p>
         )}
       </div>

@@ -1,3 +1,9 @@
+export interface VenueHost {
+  name: string
+  url: string
+  logo: string
+}
+
 export interface Event {
   slug: string
   city: string
@@ -9,6 +15,12 @@ export interface Event {
   ticketUrl?: string
   description?: string
   sponsors?: Sponsor[]
+  venueHost?: VenueHost
+  registrationOpens?: string
+  eventStart?: string
+  wayfindingNote?: string
+  mapEmbedUrl?: string
+  mapLinks?: { label: string; href: string }[]
   capacity?: number
   photo?: string
   photoCaption?: string
@@ -29,11 +41,31 @@ export const events: Event[] = [
     year: 2026,
     date: 'Friday 14 August 2026',
     dateISO: '2026-08-14',
-    venue: 'Venue announcement coming soon',
-    venuePending: true,
+    venue: 'UNSW Sydney — Science & Engineering Building (K-E8)',
     status: 'upcoming',
     description:
-      'TransportCamp returns to Sydney in August 2026. Venue and registration details will be announced soon.',
+      'TransportCamp returns to Sydney on Friday 14 August 2026, hosted at UNSW Sydney’s Science & Engineering Building. Join transport professionals, researchers, technologists and advocates for a participant-led day of open sessions on urban mobility and innovation.',
+    registrationOpens: '8:30am',
+    eventStart: '9:00am (prompt start)',
+    wayfindingNote:
+      'Kensington campus, Science & Engineering Building (K-E8). Detailed directions will be shared before the event.',
+    mapEmbedUrl:
+      'https://maps.google.com/maps?q=Science+and+Engineering+Building,+UNSW+Sydney,+Kensington,+NSW+2052&output=embed',
+    mapLinks: [
+      {
+        label: 'Open in Google Maps',
+        href: 'https://maps.google.com/?q=Science+and+Engineering+Building,+UNSW+Sydney,+Kensington,+NSW+2052',
+      },
+      {
+        label: 'UNSW campus map',
+        href: 'https://www.unsw.edu.au/maps/campus-maps',
+      },
+    ],
+    venueHost: {
+      name: 'UNSW Sydney',
+      url: 'https://www.unsw.edu.au',
+      logo: '/images/venue-hosts/unsw-sydney.png',
+    },
   },
   {
     slug: 'melbourne-2026',
