@@ -43,6 +43,7 @@ export const events: Event[] = [
     dateISO: '2026-08-14',
     venue: 'UNSW Sydney — Science & Engineering Building (K-E8)',
     status: 'upcoming',
+    ticketUrl: 'https://events.humanitix.com/transportcamp-sydney-2026',
     description:
       'TransportCamp returns to Sydney on Friday 14 August 2026, hosted at UNSW Sydney’s Science & Engineering Building. Join transport professionals, researchers, technologists and advocates for a participant-led day of open sessions on urban mobility and innovation.',
     registrationOpens: '8:30am',

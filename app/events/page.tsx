@@ -25,7 +25,7 @@ export default function EventsPage() {
             <FadeIn>
               <SectionHeader
                 title="Events"
-                description="In 2026, TransportCamp is planned for Sydney (14 August, UNSW Kensington) and Melbourne (9 October). Sydney tickets on sale soon; Melbourne tickets on sale soon."
+                description="In 2026, TransportCamp is planned for Sydney (14 August, UNSW Kensington) and Melbourne (9 October). Sydney tickets are on sale now; Melbourne tickets on sale soon."
               />
               <p className="mt-4 max-w-2xl font-sans text-base leading-relaxed text-tc-muted md:text-lg">
                 We also host participant-led unconferences across Melbourne,
