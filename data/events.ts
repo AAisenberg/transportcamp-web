@@ -77,8 +77,13 @@ export const events: Event[] = [
     venue: 'Monash University, 750 Collins Street, Docklands',
     status: 'upcoming',
     description:
-      'TransportCamp Melbourne returns to Monash University in Docklands. Join transport professionals, researchers, technologists and advocates for a participant-led day of open sessions on urban mobility and innovation. Tickets on sale soon.',
+      'TransportCamp Melbourne returns to Monash University in Docklands on Friday 9 October 2026. Join transport professionals, researchers, technologists and advocates for a participant-led day of open sessions on urban mobility and innovation. Tickets on sale soon.',
     capacity: 120,
+    venueHost: {
+      name: 'Monash University',
+      url: 'https://www.monash.edu',
+      logo: '/images/venue-hosts/monash-university.svg',
+    },
   },
   {
     slug: 'melbourne-2025',

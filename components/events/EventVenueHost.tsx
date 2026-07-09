@@ -11,7 +11,7 @@ export function EventVenueHost({ venueHost }: EventVenueHostProps) {
     <FadeIn>
       <div className="mt-10 border-t border-black/5 pt-10">
         <p className="font-sans text-xs font-semibold uppercase tracking-widest text-tc-muted">
-          Venue host — {venueHost.name}
+          Venue Partner — {venueHost.name}
         </p>
         <a
           href={venueHost.url}
@@ -22,9 +22,9 @@ export function EventVenueHost({ venueHost }: EventVenueHostProps) {
           <Image
             src={venueHost.logo}
             alt={venueHost.name}
-            width={120}
-            height={160}
-            className="h-auto w-[100px] object-contain md:w-[120px]"
+            width={220}
+            height={80}
+            className="h-auto max-h-24 w-auto max-w-[220px] object-contain"
           />
         </a>
       </div>
