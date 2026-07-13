@@ -21,6 +21,8 @@ export interface Event {
   wayfindingNote?: string
   mapEmbedUrl?: string
   mapLinks?: { label: string; href: string }[]
+  /** 1200×630 Open Graph / social share image */
+  shareImage?: string
   capacity?: number
   photo?: string
   photoCaption?: string
@@ -67,6 +69,7 @@ export const events: Event[] = [
       url: 'https://www.unsw.edu.au',
       logo: '/images/venue-hosts/unsw-sydney.png',
     },
+    shareImage: '/images/og/sydney-2026.png',
   },
   {
     slug: 'melbourne-2026',

@@ -30,11 +30,34 @@ export function generateMetadata({ params }: EventPageProps): Metadata {
     ? 'Venue to be announced'
     : event.venue
 
+  const title = `${event.city} ${event.year}`
+  const description =
+    event.description ??
+    `TransportCamp ${event.city} ${event.year} — ${event.date}. ${venueLine}.`
+
+  const shareImage = event.shareImage
+    ? {
+        url: event.shareImage,
+        width: 1200,
+        height: 630,
+        alt: `TransportCamp ${event.city} ${event.year} — ${event.date}`,
+      }
+    : undefined
+
   return {
-    title: `${event.city} ${event.year}`,
-    description:
-      event.description ??
-      `TransportCamp ${event.city} ${event.year} — ${event.date}. ${venueLine}.`,
+    title,
+    description,
+    openGraph: {
+      title: `${title} | TransportCamp`,
+      description,
+      ...(shareImage ? { images: [shareImage] } : {}),
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${title} | TransportCamp`,
+      description,
+      ...(shareImage ? { images: [shareImage.url] } : {}),
+    },
   }
 }
 
