@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import type { VenueHost } from '@/data/events'
 import { FadeIn } from '@/components/ui/FadeIn'
 
@@ -18,13 +17,13 @@ export function EventVenueHost({ venueHost }: EventVenueHostProps) {
           target="_blank"
           rel="noopener noreferrer"
           className="mt-4 inline-block rounded-md border border-black/8 bg-white p-4 transition-colours hover:border-tc-blue/30"
+          aria-label={`${venueHost.name} (opens in new tab)`}
         >
-          <Image
-            src={venueHost.logo}
-            alt={venueHost.name}
-            width={220}
-            height={80}
-            className="h-auto max-h-24 w-auto max-w-[220px] object-contain"
+          <span
+            role="img"
+            aria-hidden
+            className="block h-24 w-[220px] max-w-full bg-contain bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${venueHost.logo})` }}
           />
         </a>
       </div>

@@ -10,6 +10,7 @@ import { Navbar } from '@/components/layout/Navbar'
 import { Button } from '@/components/ui/Button'
 import { FadeIn } from '@/components/ui/FadeIn'
 import { events } from '@/data/events'
+import { getEventMetadata } from '@/lib/eventMetadata'
 import { getEventBySlug } from '@/lib/events'
 import { isVenuePending } from '@/lib/formatVenue'
 import { getTicketCta } from '@/lib/tickets'
@@ -26,39 +27,7 @@ export function generateMetadata({ params }: EventPageProps): Metadata {
   const event = getEventBySlug(params.slug)
   if (!event) return { title: 'Event' }
 
-  const venueLine = event.venuePending
-    ? 'Venue to be announced'
-    : event.venue
-
-  const title = `${event.city} ${event.year}`
-  const description =
-    event.description ??
-    `TransportCamp ${event.city} ${event.year} — ${event.date}. ${venueLine}.`
-
-  const shareImage = event.shareImage
-    ? {
-        url: event.shareImage,
-        width: 1200,
-        height: 630,
-        alt: `TransportCamp ${event.city} ${event.year} — ${event.date}`,
-      }
-    : undefined
-
-  return {
-    title,
-    description,
-    openGraph: {
-      title: `${title} | TransportCamp`,
-      description,
-      ...(shareImage ? { images: [shareImage] } : {}),
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: `${title} | TransportCamp`,
-      description,
-      ...(shareImage ? { images: [shareImage.url] } : {}),
-    },
-  }
+  return getEventMetadata(event)
 }
 
 export default function EventPage({ params }: EventPageProps) {
