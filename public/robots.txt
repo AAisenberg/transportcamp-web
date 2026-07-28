@@ -6,3 +6,5 @@ Allow: /
 
 User-agent: Slackbot
 Allow: /
+
+Sitemap: https://transportcamp.city/sitemap.xml
