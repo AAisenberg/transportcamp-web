@@ -11,7 +11,20 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://transportcamp.city'),
   openGraph: {
     siteName: 'TransportCamp',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    type: 'website',
+    locale: 'en_AU',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'TransportCamp — Where transport meets ideas.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/og-image.png'],
   },
 }
 
