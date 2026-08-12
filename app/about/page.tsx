@@ -1,16 +1,17 @@
-import type { Metadata } from 'next'
 import { HistorySection } from '@/components/about/HistorySection'
 import { WhoSection } from '@/components/about/WhoSection'
 import { Footer } from '@/components/layout/Footer'
 import { Navbar } from '@/components/layout/Navbar'
 import { FadeIn } from '@/components/ui/FadeIn'
 import { SectionHeader } from '@/components/ui/SectionHeader'
+import { pageMetadata } from '@/lib/siteMetadata'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  path: '/about/',
   title: 'About',
   description:
     'What is an unconference? Learn how TransportCamp works, who attends, and who organises the series.',
-}
+})
 
 const steps = [
   {

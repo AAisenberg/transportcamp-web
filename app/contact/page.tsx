@@ -1,4 +1,3 @@
-import type { Metadata } from 'next'
 import { NewsletterSignup } from '@/components/home/NewsletterSignup'
 import { Footer } from '@/components/layout/Footer'
 import { Navbar } from '@/components/layout/Navbar'
@@ -7,12 +6,14 @@ import { FadeIn } from '@/components/ui/FadeIn'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { SocialLinks } from '@/components/ui/SocialLinks'
 import { contactEmail, hasSocialLinks } from '@/data/social'
+import { pageMetadata } from '@/lib/siteMetadata'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  path: '/contact/',
   title: 'Contact',
   description:
     'Get in touch with TransportCamp — email, newsletter, and social channels.',
-}
+})
 
 export default function ContactPage() {
   return (

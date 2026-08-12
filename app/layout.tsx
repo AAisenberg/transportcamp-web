@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   description:
     'An unconference bringing together transport professionals, researchers, technologists and advocates working on the future of urban mobility.',
   metadataBase: new URL('https://transportcamp.city'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     siteName: 'TransportCamp',
     type: 'website',

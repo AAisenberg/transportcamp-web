@@ -1,7 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { events } from '@/data/events'
-
-const siteUrl = 'https://transportcamp.city'
+import { siteUrl } from '@/lib/siteMetadata'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [

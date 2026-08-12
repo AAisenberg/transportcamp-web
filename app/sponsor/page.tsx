@@ -1,15 +1,16 @@
-import type { Metadata } from 'next'
 import { Footer } from '@/components/layout/Footer'
 import { Navbar } from '@/components/layout/Navbar'
 import { Button } from '@/components/ui/Button'
 import { FadeIn } from '@/components/ui/FadeIn'
 import { SectionHeader } from '@/components/ui/SectionHeader'
+import { pageMetadata } from '@/lib/siteMetadata'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  path: '/sponsor/',
   title: 'Sponsor',
   description:
     'Support TransportCamp and connect with transport professionals, researchers and innovators.',
-}
+})
 
 const valueProps = [
   {

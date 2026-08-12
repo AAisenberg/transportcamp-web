@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import type { Event } from '@/data/events'
-
-const siteUrl = 'https://transportcamp.city'
+import { siteUrl } from '@/lib/siteMetadata'
 
 /** Bump when replacing a share image so LinkedIn/Slack pick up the new asset. */
 const shareImageVersion = '2'

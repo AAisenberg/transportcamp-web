@@ -1,16 +1,17 @@
-import type { Metadata } from 'next'
 import { EventGrid } from '@/components/events/EventGrid'
 import { Footer } from '@/components/layout/Footer'
 import { Navbar } from '@/components/layout/Navbar'
 import { FadeIn } from '@/components/ui/FadeIn'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { getPastEvents, getUpcomingEvents } from '@/lib/events'
+import { pageMetadata } from '@/lib/siteMetadata'
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  path: '/events/',
   title: 'Events',
   description:
     'TransportCamp in Sydney and Melbourne in 2026, plus unconferences across Australia since 2014.',
-}
+})
 
 export default function EventsPage() {
   const upcomingEvents = getUpcomingEvents()
