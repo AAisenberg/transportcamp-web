@@ -44,10 +44,11 @@ export const events: Event[] = [
     date: 'Friday 14 August 2026',
     dateISO: '2026-08-14',
     venue: 'UNSW Sydney — Science & Engineering Building (K-E8)',
-    status: 'upcoming',
-    ticketUrl: 'https://events.humanitix.com/transportcamp-sydney-2026',
+    status: 'past',
     description:
-      'TransportCamp returns to Sydney on Friday 14 August 2026, hosted at UNSW Sydney’s Science & Engineering Building. Join transport professionals, researchers, technologists and advocates for a participant-led day of open sessions on urban mobility and innovation.',
+      'TransportCamp returned to Sydney on Friday 14 August 2026 at UNSW Sydney’s Science & Engineering Building — a participant-led day of open sessions on urban mobility and innovation.',
+    photo: '/images/events/sydney-2026.jpg',
+    photoCaption: 'TransportCamp Sydney 2026 at UNSW Kensington',
     registrationOpens: '8:30am',
     eventStart: '9:00am (prompt start)',
     wayfindingNote:
@@ -79,8 +80,21 @@ export const events: Event[] = [
     dateISO: '2026-10-09',
     venue: 'Monash University, 750 Collins Street, Docklands',
     status: 'upcoming',
+    // ticketUrl: 'https://events.humanitix.com/transportcamp-melbourne-2026' — add when Humanitix goes live Wed 19 Aug
     description:
-      'TransportCamp Melbourne returns to Monash University in Docklands on Friday 9 October 2026. Join transport professionals, researchers, technologists and advocates for a participant-led day of open sessions on urban mobility and innovation. Tickets on sale soon.',
+      'TransportCamp Melbourne returns to Monash University in Docklands on Friday 9 October 2026. Join transport professionals, researchers, technologists and advocates for a participant-led day of open sessions on urban mobility and innovation.',
+    registrationOpens: '8:30am',
+    eventStart: '9:00am (prompt start)',
+    wayfindingNote:
+      'Monash University at 750 Collins Street, Docklands. Detailed directions will be shared before the event.',
+    mapEmbedUrl:
+      'https://maps.google.com/maps?q=Monash+University,+750+Collins+Street,+Docklands,+VIC+3008&output=embed',
+    mapLinks: [
+      {
+        label: 'Open in Google Maps',
+        href: 'https://maps.google.com/?q=Monash+University,+750+Collins+Street,+Docklands,+VIC+3008',
+      },
+    ],
     capacity: 120,
     venueHost: {
       name: 'Monash University',

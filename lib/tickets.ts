@@ -19,7 +19,7 @@ export function getTicketCta(event: Event): TicketCta | null {
   }
 
   return {
-    label: 'Tickets on sale soon',
+    label: `${event.city} tickets on sale soon`,
     href: `/events/${event.slug}/`,
     onSale: false,
   }
@@ -44,6 +44,15 @@ export function getPrimaryTicketCta(events: Event[]): TicketCta {
       label: 'View events',
       href: '/events/',
       onSale: true,
+    }
+  }
+
+  if (upcoming.length === 1) {
+    const event = upcoming[0]
+    return {
+      label: `${event.city} tickets on sale soon`,
+      href: `/events/${event.slug}/`,
+      onSale: false,
     }
   }
 
