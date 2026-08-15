@@ -101,6 +101,7 @@ export const events: Event[] = [
       url: 'https://www.monash.edu',
       logo: '/images/venue-hosts/monash-university.svg',
     },
+    shareImage: '/images/og/melbourne-2026.png',
   },
   {
     slug: 'melbourne-2025',

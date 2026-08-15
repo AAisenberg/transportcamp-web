@@ -40,6 +40,12 @@ export function Navbar() {
 
   const menuIconClass = menuOpen || solid ? 'text-tc-text' : 'text-white'
 
+  const ticketButtonVariant = ticketCta.onSale
+    ? 'primary'
+    : solid
+      ? 'outline'
+      : 'ghost'
+
   return (
     <>
       <header
@@ -71,10 +77,12 @@ export function Navbar() {
 
           <div className="hidden md:block">
             <Button
-              variant="primary"
+              variant={ticketButtonVariant}
               size="sm"
               href={ticketCta.href}
-              className={solid ? '' : '!border-tc-orange'}
+              className={
+                ticketCta.onSale && !solid ? '!border-tc-orange' : undefined
+              }
             >
               {ticketCta.label}
             </Button>
@@ -133,7 +141,7 @@ export function Navbar() {
             </ul>
             <div className="mt-10 px-8">
               <Button
-                variant="primary"
+                variant={ticketCta.onSale ? 'primary' : 'ghost'}
                 size="lg"
                 href={ticketCta.href}
                 className="w-full justify-center"
