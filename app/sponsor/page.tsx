@@ -73,18 +73,16 @@ export default function SponsorPage() {
                   What your support enables
                 </h2>
                 <p className="mt-5 font-sans text-lg text-tc-muted leading-relaxed">
-                  TransportCamp is seeking sponsors for 2026 events in{' '}
-                  <strong className="font-semibold text-tc-text">Sydney</strong>{' '}
-                  (14 August) and{' '}
-                  <strong className="font-semibold text-tc-text">Melbourne</strong>{' '}
-                  (9 October). Sponsorship helps cover venue and production costs,
-                  keeps ticket prices accessible, and supports an open format where
-                  participants set the agenda.
+                  TransportCamp is seeking sponsors for{' '}
+                  <strong className="font-semibold text-tc-text">Melbourne 2026</strong>{' '}
+                  on Friday 9 October at Monash University, Docklands. Sponsorship helps
+                  cover venue and production costs, keeps ticket prices accessible, and
+                  supports an open format where participants set the agenda.
                 </p>
                 <p className="mt-4 font-sans text-lg text-tc-muted leading-relaxed">
-                  Packages are tailored to each event and city. We will publish tier
-                  details when 2026 partnerships are confirmed — for now, get in touch
-                  to discuss what would work for your organisation.
+                  Packages are tailored to each event. We will publish tier details when
+                  2026 partnerships are confirmed — for now, get in touch to discuss what
+                  would work for your organisation.
                 </p>
               </FadeIn>
 
@@ -94,8 +92,8 @@ export default function SponsorPage() {
                     Get in touch
                   </h2>
                   <p className="mt-4 font-sans text-tc-muted leading-relaxed">
-                    Email us to discuss sponsorship for Sydney and Melbourne 2026, or
-                    future TransportCamp events in other cities.
+                    Email us to discuss sponsorship for Melbourne 2026 or future
+                    TransportCamp events in other cities.
                   </p>
                   <div className="mt-8">
                     <Button

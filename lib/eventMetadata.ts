@@ -3,7 +3,7 @@ import type { Event } from '@/data/events'
 import { siteUrl } from '@/lib/siteMetadata'
 
 /** Bump when replacing a share image so LinkedIn/Slack pick up the new asset. */
-const shareImageVersion = '2'
+const shareImageVersion = '3'
 
 export function getEventMetadata(event: Event): Metadata {
   const venueLine = event.venuePending ? 'Venue to be announced' : event.venue
