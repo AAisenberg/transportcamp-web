@@ -29,13 +29,13 @@ export function Hero() {
   const ticketCta = getPrimaryTicketCta(upcomingEvents)
 
   return (
-    <section className="relative min-h-[90vh] dot-grid pt-24 pb-16 md:pt-28">
+    <section className="relative dot-grid pt-24 pb-10 md:pt-28 md:pb-12">
       <div
         className="absolute left-0 top-0 bottom-0 w-1 stripe-accent"
         aria-hidden
       />
 
-      <div className="relative mx-auto grid max-w-6xl gap-12 px-5 md:grid-cols-[1fr_minmax(300px,400px)] md:items-end md:gap-12 md:px-8">
+      <div className="relative mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-[1fr_minmax(300px,400px)] md:items-start md:gap-10 md:px-8">
         <div className="max-w-2xl">
           {upcomingEvents.length > 0 && (
             <div className="flex flex-wrap gap-2">
