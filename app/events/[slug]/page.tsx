@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { EventHero } from '@/components/events/EventHero'
 import { EventMap } from '@/components/events/EventMap'
 import { EventPhoto } from '@/components/events/EventPhoto'
+import { EventSponsors } from '@/components/events/EventSponsors'
 import { EventVenueHost } from '@/components/events/EventVenueHost'
 import { Footer } from '@/components/layout/Footer'
 import { Navbar } from '@/components/layout/Navbar'
@@ -60,6 +61,9 @@ export default function EventPage({ params }: EventPageProps) {
                   )}
                   {event.venueHost && (
                     <EventVenueHost venueHost={event.venueHost} />
+                  )}
+                  {event.sponsors && event.sponsors.length > 0 && (
+                    <EventSponsors sponsors={event.sponsors} />
                   )}
                   <EventMap event={event} />
                 </div>
@@ -151,29 +155,6 @@ export default function EventPage({ params }: EventPageProps) {
           </section>
         )}
 
-        {event.sponsors && event.sponsors.length > 0 && (
-          <section className="border-t border-black/5 bg-tc-off-white py-12">
-            <div className="mx-auto max-w-6xl px-5 md:px-8">
-              <p className="font-sans text-xs font-semibold uppercase tracking-widest text-tc-muted">
-                Sponsors
-              </p>
-              <ul className="mt-6 flex flex-wrap gap-6">
-                {event.sponsors.map((sponsor) => (
-                  <li key={sponsor.name}>
-                    <a
-                      href={sponsor.url}
-                      className="font-sans text-tc-blue hover:text-tc-orange transition-colours"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {sponsor.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </section>
-        )}
       </main>
       <Footer />
     </>

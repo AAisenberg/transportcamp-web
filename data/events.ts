@@ -101,6 +101,20 @@ export const events: Event[] = [
       url: 'https://www.monash.edu',
       logo: '/images/venue-hosts/monash-university.svg',
     },
+    sponsors: [
+      {
+        name: 'Stantec',
+        url: 'https://www.stantec.com/en',
+        logo: '/images/sponsors/stantec.svg',
+        tier: 'supporting',
+      },
+      {
+        name: 'Modal Planning',
+        url: 'https://modalplanning.com/',
+        logo: '/images/sponsors/modal-planning.png',
+        tier: 'supporting',
+      },
+    ],
     shareImage: '/images/og/melbourne-2026.png',
   },
   {

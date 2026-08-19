@@ -1,16 +1,19 @@
 export interface Organiser {
   name: string
   href: string
+  logo: string
 }
 
 export const organisers: Organiser[] = [
   {
     name: 'CrowdLab',
     href: 'https://crowdlab.com.au/',
+    logo: '/organisers/crowdlab.png',
   },
   {
     name: 'Movement in Place Consulting',
     href: 'https://www.movementandplace.com.au/',
+    logo: '/organisers/movement-in-place.jpg',
   },
 ]
 
