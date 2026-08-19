@@ -27,6 +27,10 @@ export interface Event {
   photo?: string
   photoCaption?: string
   venuePending?: boolean
+  /** Full-width sponsor logo strip (white background PNG). */
+  partnerBanner?: string
+  /** Full-width co-organiser logo strip (white background PNG). */
+  organiserBanner?: string
 }
 
 export interface Sponsor {
@@ -80,7 +84,7 @@ export const events: Event[] = [
     dateISO: '2026-10-09',
     venue: 'Monash University, 750 Collins Street, Docklands',
     status: 'upcoming',
-    // ticketUrl: 'https://events.humanitix.com/transportcamp-melbourne-2026' — add when Humanitix goes live Wed 19 Aug
+    ticketUrl: 'https://events.humanitix.com/transportcamp-melbourne-2026',
     description:
       'TransportCamp Melbourne returns to Monash University in Docklands on Friday 9 October 2026. Join transport professionals, researchers, technologists and advocates for a participant-led day of open sessions on urban mobility and innovation.',
     registrationOpens: '8:30am',
@@ -101,20 +105,8 @@ export const events: Event[] = [
       url: 'https://www.monash.edu',
       logo: '/images/venue-hosts/monash-university.svg',
     },
-    sponsors: [
-      {
-        name: 'Stantec',
-        url: 'https://www.stantec.com/en',
-        logo: '/images/sponsors/stantec.svg',
-        tier: 'supporting',
-      },
-      {
-        name: 'Modal Planning',
-        url: 'https://modalplanning.com/',
-        logo: '/images/sponsors/modal-planning.png',
-        tier: 'supporting',
-      },
-    ],
+    partnerBanner: '/images/events/melbourne-2026-sponsors.png?v=3',
+    organiserBanner: '/images/events/melbourne-2026-organisers.png?v=3',
     shareImage: '/images/og/melbourne-2026.png',
   },
   {

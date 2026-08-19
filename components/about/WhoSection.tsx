@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { organisers } from '@/data/organisers'
 import { FadeIn } from '@/components/ui/FadeIn'
-import { OrganisersMark } from '@/components/ui/OrganisersMark'
 
 export function WhoSection() {
   return (
@@ -51,7 +50,6 @@ export function WhoSection() {
               delivery experience from years of running unconferences across
               Australia.
             </p>
-            <OrganisersMark className="mt-8" />
           </FadeIn>
         </div>
       </div>

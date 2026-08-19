@@ -4,6 +4,10 @@ import { notFound } from 'next/navigation'
 import { EventHero } from '@/components/events/EventHero'
 import { EventMap } from '@/components/events/EventMap'
 import { EventPhoto } from '@/components/events/EventPhoto'
+import {
+  EventPartnerAcknowledgements,
+  hasPartnerAcknowledgements,
+} from '@/components/events/EventPartnerAcknowledgements'
 import { EventSponsors } from '@/components/events/EventSponsors'
 import { EventVenueHost } from '@/components/events/EventVenueHost'
 import { Footer } from '@/components/layout/Footer'
@@ -45,7 +49,7 @@ export default function EventPage({ params }: EventPageProps) {
         <EventPhoto event={event} />
 
         {(event.description || event.status === 'upcoming') && (
-          <section className="py-12 md:py-16">
+          <section className="bg-white py-12 md:py-16">
             <div className="mx-auto max-w-6xl px-5 md:px-8">
               <div className="grid gap-10 lg:grid-cols-[1fr_280px] lg:gap-16">
                 <div>
@@ -59,11 +63,17 @@ export default function EventPage({ params }: EventPageProps) {
                       </p>
                     </FadeIn>
                   )}
-                  {event.venueHost && (
-                    <EventVenueHost venueHost={event.venueHost} />
-                  )}
-                  {event.sponsors && event.sponsors.length > 0 && (
-                    <EventSponsors sponsors={event.sponsors} />
+                  {hasPartnerAcknowledgements(event) ? (
+                    <EventPartnerAcknowledgements event={event} />
+                  ) : (
+                    <>
+                      {event.venueHost && (
+                        <EventVenueHost venueHost={event.venueHost} />
+                      )}
+                      {event.sponsors && event.sponsors.length > 0 && (
+                        <EventSponsors sponsors={event.sponsors} />
+                      )}
+                    </>
                   )}
                   <EventMap event={event} />
                 </div>

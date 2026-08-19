@@ -1,8 +1,7 @@
 import Link from 'next/link'
-import { legalEntity, organisers } from '@/data/organisers'
+import { legalEntity } from '@/data/organisers'
 import { contactEmail } from '@/data/social'
 import { Logo } from '@/components/ui/Logo'
-import { OrganisersMark } from '@/components/ui/OrganisersMark'
 import { SocialLinks } from '@/components/ui/SocialLinks'
 
 const footerLinks = [
@@ -26,11 +25,10 @@ export function Footer() {
               technologists and advocates working on the future of urban mobility.
             </p>
             <SocialLinks variant="dark" className="mt-6" />
-            <OrganisersMark variant="dark" className="mt-8" />
             <p className="mt-6 font-sans text-xs text-white/40 leading-relaxed">
               {legalEntity.name} · ABN {legalEntity.abn}
               <br />
-              Co-organised by {organisers[0].name} with {organisers[1].name}
+              Co-organised by CrowdLab with Movement in Place Consulting
             </p>
           </div>
 
