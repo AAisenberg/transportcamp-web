@@ -10,7 +10,7 @@ export const metadata = pageMetadata({
   path: '/events/',
   title: 'Events',
   description:
-    'TransportCamp in Sydney and Melbourne in 2026, plus unconferences across Australia since 2014.',
+    'TransportCamp in Sydney and Melbourne in 2026 — both now in the archive — plus unconferences across Australia since 2014.',
 })
 
 export default function EventsPage() {
@@ -26,7 +26,7 @@ export default function EventsPage() {
             <FadeIn>
               <SectionHeader
                 title="Events"
-                description="Melbourne is next on Friday 9 October at Monash University, Docklands. Sydney 2026 was held at UNSW Kensington in August — see the archive below."
+                description="Sydney and Melbourne both ran in 2026. Browse the archive below for photos, venues and details from each event."
               />
               <p className="mt-4 max-w-2xl font-sans text-base leading-relaxed text-tc-muted md:text-lg">
                 We also host participant-led unconferences across Melbourne,

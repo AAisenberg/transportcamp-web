@@ -13,9 +13,9 @@ export function SponsorsStrip() {
             Partner with TransportCamp
           </h2>
           <p className="mt-4 font-sans text-lg text-tc-muted leading-relaxed">
-            TransportCamp is currently seeking sponsors for Melbourne 2026 and
-            future events. Sponsorship helps keep tickets accessible and supports
-            an independent, participant-led format.
+            TransportCamp is seeking sponsors for future events across Australia.
+            Sponsorship helps keep tickets accessible and supports an independent,
+            participant-led format.
           </p>
           <p className="mt-6">
             <Link

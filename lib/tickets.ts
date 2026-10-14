@@ -56,6 +56,14 @@ export function getPrimaryTicketCta(events: Event[]): TicketCta {
     }
   }
 
+  if (upcoming.length === 0) {
+    return {
+      label: 'View events',
+      href: '/events/',
+      onSale: false,
+    }
+  }
+
   return {
     label: 'Tickets on sale soon',
     href: '/events/',

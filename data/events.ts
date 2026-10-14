@@ -24,8 +24,19 @@ export interface Event {
   /** 1200×630 Open Graph / social share image */
   shareImage?: string
   capacity?: number
+  /** Actual attendance (typically set after a past event). */
+  attendees?: number
   photo?: string
   photoCaption?: string
+  photoWidth?: number
+  photoHeight?: number
+  /** Extra archive images shown below the main photo (e.g. session grid). */
+  morePhotos?: {
+    src: string
+    caption?: string
+    width: number
+    height: number
+  }[]
   venuePending?: boolean
   /** Full-width sponsor logo strip (white background PNG). */
   partnerBanner?: string
@@ -83,14 +94,25 @@ export const events: Event[] = [
     date: 'Friday 9 October 2026',
     dateISO: '2026-10-09',
     venue: 'Monash University, 750 Collins Street, Docklands',
-    status: 'upcoming',
-    ticketUrl: 'https://events.humanitix.com/transportcamp-melbourne-2026',
+    status: 'past',
     description:
-      'TransportCamp Melbourne returns to Monash University in Docklands on Friday 9 October 2026. Join transport professionals, researchers, technologists and advocates for a participant-led day of open sessions on urban mobility and innovation.',
+      'TransportCamp returned to Monash University in Docklands on Friday 9 October 2026 — a participant-led day of open sessions on urban mobility and innovation.',
+    photo: '/images/events/melbourne-2026.jpg',
+    photoCaption: 'TransportCamp Melbourne 2026 at Monash University, Docklands',
+    photoWidth: 819,
+    photoHeight: 373,
+    morePhotos: [
+      {
+        src: '/images/events/melbourne-2026-schedule.jpg',
+        caption: 'Participant-led session grid — Monash University, Docklands',
+        width: 1024,
+        height: 768,
+      },
+    ],
     registrationOpens: '8:30am',
     eventStart: '9:00am (prompt start)',
     wayfindingNote:
-      'Monash University at 750 Collins Street, Docklands. Detailed directions will be shared before the event.',
+      'Held at Monash University, 750 Collins Street, Docklands.',
     mapEmbedUrl:
       'https://maps.google.com/maps?q=Monash+University,+750+Collins+Street,+Docklands,+VIC+3008&output=embed',
     mapLinks: [
@@ -99,7 +121,7 @@ export const events: Event[] = [
         href: 'https://maps.google.com/?q=Monash+University,+750+Collins+Street,+Docklands,+VIC+3008',
       },
     ],
-    capacity: 120,
+    attendees: 169,
     venueHost: {
       name: 'Monash University',
       url: 'https://www.monash.edu',

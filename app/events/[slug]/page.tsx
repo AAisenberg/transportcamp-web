@@ -116,7 +116,15 @@ export default function EventPage({ params }: EventPageProps) {
                           </dd>
                         </div>
                       )}
-                      {event.capacity && (
+                      {event.attendees != null && (
+                        <div>
+                          <dt className="text-tc-muted">Attendees</dt>
+                          <dd className="mt-1 font-medium text-tc-text">
+                            {event.attendees}
+                          </dd>
+                        </div>
+                      )}
+                      {event.attendees == null && event.capacity && (
                         <div>
                           <dt className="text-tc-muted">Capacity</dt>
                           <dd className="mt-1 font-medium text-tc-text">

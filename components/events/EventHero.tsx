@@ -24,8 +24,12 @@ export function EventHero({ event }: EventHeroProps) {
         : 'Coming soon'
       : 'Past event'
 
+  const sectionPadding = event.photo
+    ? 'pt-28 pb-10 md:pt-32 md:pb-12'
+    : 'pt-28 pb-14 md:pt-32 md:pb-16'
+
   return (
-    <section className="relative dot-grid pt-28 pb-14 md:pt-32 md:pb-16">
+    <section className={`relative dot-grid ${sectionPadding}`}>
       <div
         className={`absolute left-0 top-0 bottom-0 w-1 ${stripeClass}`}
         aria-hidden
