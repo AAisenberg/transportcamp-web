@@ -150,6 +150,26 @@
       "source": "/2025-melbourne-sessions/:path*",
       "destination": "/events/melbourne-2025/",
       "permanent": true
+    },
+    {
+      "source": "/2026-sydney-sessions",
+      "destination": "/events/sydney-2026/",
+      "permanent": true
+    },
+    {
+      "source": "/2026-sydney-sessions/:path*",
+      "destination": "/events/sydney-2026/",
+      "permanent": true
+    },
+    {
+      "source": "/2026-melbourne-sessions",
+      "destination": "/events/melbourne-2026/",
+      "permanent": true
+    },
+    {
+      "source": "/2026-melbourne-sessions/:path*",
+      "destination": "/events/melbourne-2026/",
+      "permanent": true
     }
   ]
 }
