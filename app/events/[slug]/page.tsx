@@ -19,6 +19,11 @@ import { getEventMetadata } from '@/lib/eventMetadata'
 import { getEventBySlug } from '@/lib/events'
 import { isVenuePending } from '@/lib/formatVenue'
 import { getTicketCta } from '@/lib/tickets'
+import {
+  breadcrumbJsonLd,
+  eventJsonLd,
+} from '@/lib/structuredData'
+import { JsonLd } from '@/components/ui/JsonLd'
 
 interface EventPageProps {
   params: { slug: string }
@@ -43,6 +48,14 @@ export default function EventPage({ params }: EventPageProps) {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: 'Events', path: '/events/' },
+          { name: `${event.city} ${event.year}`, path: `/events/${event.slug}/` },
+        ])}
+      />
+      <JsonLd data={eventJsonLd(event)} />
       <Navbar />
       <main>
         <EventHero event={event} />
@@ -100,7 +113,7 @@ export default function EventPage({ params }: EventPageProps) {
                           {event.venue}
                         </dd>
                       </div>
-                      {event.registrationOpens && (
+                      {event.status === 'upcoming' && event.registrationOpens && (
                         <div>
                           <dt className="text-tc-muted">Registration opens</dt>
                           <dd className="mt-1 font-medium text-tc-text">
@@ -108,7 +121,7 @@ export default function EventPage({ params }: EventPageProps) {
                           </dd>
                         </div>
                       )}
-                      {event.eventStart && (
+                      {event.status === 'upcoming' && event.eventStart && (
                         <div>
                           <dt className="text-tc-muted">Event starts</dt>
                           <dd className="mt-1 font-medium text-tc-text">

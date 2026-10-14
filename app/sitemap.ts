@@ -33,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const eventRoutes: MetadataRoute.Sitemap = events.map((event) => ({
     url: `${siteUrl}/events/${event.slug}/`,
-    lastModified: event.dateISO,
+    lastModified: event.updatedAt ?? event.dateISO,
     changeFrequency: event.status === 'upcoming' ? 'weekly' : 'yearly',
     priority: event.status === 'upcoming' ? 0.9 : 0.4,
   }))

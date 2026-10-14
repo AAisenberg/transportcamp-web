@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import type { Event } from '@/data/events'
 import { Button } from '@/components/ui/Button'
@@ -35,9 +36,24 @@ export function EventGrid({ events, showUpcoming = false }: EventGridProps) {
         return (
           <article
             key={event.slug}
-            className="group rounded-md border border-black/8 bg-white p-6 transition-colours hover:border-tc-blue/30"
+            className="group overflow-hidden rounded-md border border-black/8 bg-white transition-colours hover:border-tc-blue/30"
           >
             <Link href={`/events/${event.slug}/`} className="block">
+              {event.photo && (
+                <div className="relative aspect-[2/1] overflow-hidden border-b border-black/5 bg-tc-off-white">
+                  <Image
+                    src={event.photo}
+                    alt={
+                      event.photoCaption ??
+                      `TransportCamp ${event.city} ${event.year}`
+                    }
+                    width={event.photoWidth ?? 800}
+                    height={event.photoHeight ?? 400}
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                </div>
+              )}
+              <div className="p-6">
               {isUpcoming && (
                 <p
                   className={`font-sans text-xs font-semibold uppercase tracking-widest ${
@@ -62,10 +78,11 @@ export function EventGrid({ events, showUpcoming = false }: EventGridProps) {
               >
                 {event.venue}
               </p>
+              </div>
             </Link>
 
             {isUpcoming && ticketCta && (
-              <div className="mt-4 flex flex-col gap-2">
+              <div className="mx-6 mb-6 mt-0 flex flex-col gap-2">
                 {!ticketCta.onSale && (
                   <p className="font-sans text-xs text-tc-muted">{ticketCta.label}</p>
                 )}

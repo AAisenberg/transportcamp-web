@@ -1,4 +1,7 @@
 import type { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/react'
+import { JsonLd } from '@/components/ui/JsonLd'
+import { organizationJsonLd } from '@/lib/structuredData'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -38,7 +41,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-AU">
-      <body>{children}</body>
+      <body>
+        <JsonLd data={organizationJsonLd()} />
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }

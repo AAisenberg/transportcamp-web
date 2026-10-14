@@ -24,3 +24,12 @@ export function getPastEvents(): Event[] {
 export function getAllEventsSorted(): Event[] {
   return [...events].sort((a, b) => b.dateISO.localeCompare(a.dateISO))
 }
+
+const featuredRecentSlugs = ['melbourne-2026', 'sydney-2026'] as const
+
+/** Highlighted past events for the homepage when nothing is upcoming. */
+export function getFeaturedRecentEvents(): Event[] {
+  return featuredRecentSlugs
+    .map((slug) => getEventBySlug(slug))
+    .filter((event): event is Event => event != null)
+}

@@ -26,6 +26,8 @@ export interface Event {
   capacity?: number
   /** Actual attendance (typically set after a past event). */
   attendees?: number
+  /** ISO date — bump when page content changes (sitemap lastmod). */
+  updatedAt?: string
   photo?: string
   photoCaption?: string
   photoWidth?: number
@@ -86,6 +88,7 @@ export const events: Event[] = [
       logo: '/images/venue-hosts/unsw-sydney.png',
     },
     shareImage: '/images/og/sydney-2026.png',
+    updatedAt: '2026-10-15',
   },
   {
     slug: 'melbourne-2026',
@@ -130,6 +133,7 @@ export const events: Event[] = [
     partnerBanner: '/images/events/melbourne-2026-sponsors.png?v=3',
     organiserBanner: '/images/events/melbourne-2026-organisers.png?v=3',
     shareImage: '/images/og/melbourne-2026.png',
+    updatedAt: '2026-10-15',
   },
   {
     slug: 'melbourne-2025',
